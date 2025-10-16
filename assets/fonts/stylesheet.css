@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Rounded Mplus 1c';
+    src: url('RoundedMplus1c-Regular.woff2') format('woff2'),
+        url('RoundedMplus1c-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rounded Mplus 1c';
+    src: url('RoundedMplus1c-Medium.woff2') format('woff2'),
+        url('RoundedMplus1c-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('SourceCodePro-Bold.woff2') format('woff2'),
+        url('SourceCodePro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

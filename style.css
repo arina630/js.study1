@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'RoundedMplus1c';
+  src: url('assets/fonts/RoundedMplus1c-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RoundedMplus1c';
+  src: url('assets/fonts/RoundedMplus1c-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'SourceCodePro';
+  src: url('assets/fonts/SourceCodePro-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: 'RoundedMplus1c';
+  font-weight: 400;
+  background: url(assets/image/3467771.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  margin-block: 50px;
+}
+
+h1 {
+  font-size: clamp(35px, 7.81vw, 150px);
+  padding-block: 50px;
+}
+
+.simple-example-list-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tasks-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.list-item {
+  position: relative;
+  font-size: clamp(25px, 3.64vw, 70px);
+  margin-block: 15px;
+}
+
+.list-item::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -40px;
+  display: inline-block;
+  width: clamp(25px, 3.64vw, 70px);
+  height: clamp(25px, 3.64vw, 70px);
+  background-image: url(assets/image/icons/salad_bowl_food_vegetables_vegan_healthy_food_icon_207981.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.dom-example {
+  padding: 40px;
+  border: 5px solid #63ce75;
+}
+
+.counter {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 5px solid #4a8053;
+}
+
+@media(min-width: 720px) {
+
+  li {
+    text-align: center;
+  }
+
+  .list-item::before {
+    position: static;
+    display: block;
+    margin-inline: 2em;
+  }
+}
